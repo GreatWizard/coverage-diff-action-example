@@ -1,0 +1,26 @@
+name: Coverage Diff
+
+on:
+  push:
+    branches:
+      - master
+  pull_request: {}
+
+jobs:
+  test:
+    name: Coverage Diff
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Coverage Diff (wiki storage)
+        uses: greatwizard/coverage-diff-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          allowed-to-fail: true
+      - name: Coverage Diff (branch storage)
+        uses: greatwizard/coverage-diff-action@feat/storage-git
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          allowed-to-fail: true
+          storage: github
