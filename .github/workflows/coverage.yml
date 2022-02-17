@@ -15,7 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Coverage Diff
-        uses: greatwizard/coverage-diff-action@v1
+        uses: greatwizard/coverage-diff-action@feat/storage-git
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           allowed-to-fail: true
+          storage: github
+          git-branch: coverage-diff-storage
