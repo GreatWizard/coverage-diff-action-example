@@ -19,7 +19,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           allowed-to-fail: true
       - name: Coverage Diff (branch storage)
-        uses: greatwizard/coverage-diff-action@v1
+        uses: greatwizard/coverage-diff-action@feat/storage-git
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           allowed-to-fail: true
